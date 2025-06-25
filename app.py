@@ -8,7 +8,7 @@ from io import BytesIO
 import base64
 
 # 🔐 Clés API (hardcodées pour test uniquement)
-openai.api_key = "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"
+client = openai.OpenAI(api_key="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")
 os.environ["REPLICATE_API_TOKEN"] = "r8_OoqRHDpMxoupoRqeSegx2MRqOV8h0ND23sg7S"
 
 # Streamlit UI
@@ -73,7 +73,7 @@ if submit:
         La description doit être compatible avec une IA de génération d’image (type Midjourney), sans mentionner le budget.
         """
 
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4",
             messages=[
                 {"role": "system", "content": "Tu es un expert en design intérieur et tu crées des descriptions réalistes de pièces pour des générateurs d'images IA."},
