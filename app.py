@@ -118,7 +118,7 @@ if submit:
             buffered = BytesIO()
             img.save(buffered, format="PNG")
             img_str = base64.b64encode(buffered.getvalue()).decode()
-            href = f'<a href="data:file/png;base64,{img_str}" download="{filename}">📥 Télécharger l'image</a>'
+            href = f"<a href='data:file/png;base64,{img_str}' download='{filename}'>📥 Télécharger l'image</a>"
             return href
 
         st.markdown(get_image_download_link(selected_img, output_path), unsafe_allow_html=True)
