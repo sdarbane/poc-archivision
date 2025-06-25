@@ -8,7 +8,7 @@ from io import BytesIO
 import base64
 
 # 🔐 Clés API (hardcodées pour test uniquement)
-client = openai.OpenAI(api_key="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")
+client = openai.OpenAI(api_key="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")
 os.environ["REPLICATE_API_TOKEN"] = "r8_OoqRHDpMxoupoRqeSegx2MRqOV8h0ND23sg7S"
 
 # Streamlit UI
