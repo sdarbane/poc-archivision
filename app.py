@@ -8,9 +8,8 @@ from io import BytesIO
 import base64
 
 # 🔐 Clés API (hardcodées pour test uniquement)
-client = openai.OpenAI(api_key="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")
-os.environ["REPLICATE_API_TOKEN"] = "r8_OoqRHDpMxoupoRqeSegx2MRqOV8h0ND23sg7S"
-
+client = openai.api_key = st.secrets["OPENAI_API_KEY"]
+os.environ["REPLICATE_API_TOKEN"] = st.secrets["REPLICATE_API_TOKEN"]
 # Streamlit UI
 st.set_page_config(page_title="AI Interior Designer", layout="centered")
 st.markdown("""
